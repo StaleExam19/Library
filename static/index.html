@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Library</title>
+</head>
+
+<body class="text-zinc-200 bg-zinc-900 ">
+    <h1 class="text-5xl text-center my-4">Library</h1>
+
+    <div class="mx-auto w-10/12">
+        <button data-toggle="add-book-form" class="button">
+            <span class="material-icons pointer-events-none">
+                add
+            </span>
+            Add Book
+        </button>
+    </div>
+
+    <!-- Separotor -->
+    <div class="mx-auto py-3 w-10/12">
+        <div class="h-[1px] w-full bg-zinc-700"></div>
+    </div>
+
+    <div class="book-container">
+        <div class="flex flex-col items-center" id="ind">
+            <span class="material-icons text-9xl text-zinc-600">
+                filter_list_off
+            </span>
+            <h3 class="text-2xl text-zinc-600">Library is empty at the moment</h3>
+            <p class="text-zinc-600">Try adding some new books</p>
+        </div>
+    </div>
+
+    <div class="modal-container hidden ">
+        <div class="overlay absolute top-0 left-0 bg-black opacity-50 h-screen w-full"></div>
+
+        <form class="bg-zinc-900 py-4 px-6 dialog flex-col rounded-sm z-10 w-[500px] shadow-md hidden" action="" id="add-book-form">
+            <h3 class="text-xl">Add Book</h3>
+            <div class="mt-5">
+                <label for="" class="block">Title</label>
+                <input type="text" id="title" required>
+            </div>
+
+            <div class="mt-5">
+                <label for="" class="block">Author</label>
+                <input type="text" id="author" required>
+            </div>
+
+            <div class="mt-5">
+                <label for="" class="block">Pages</label>
+                <input type="number" id="pages" required>
+            </div>
+
+            <div class="mt-5">
+                <button class="button">
+                    Add Book
+                </button>
+            </div>
+        </form>
+
+        <!-- Dialog -->
+        <div class="dialog hidden py-4 px-6 rounded-sm w-72 h-max bg-zinc-900 shadow-md
+         hover:cursor-pointer z-10 flex-col gap-2" id="dialog">
+            <p>What do you want to do with this book</p>
+
+            <div class="flex gap-2">
+                <button class="py-1 px-2 bg-blue-500 rounded-sm" id="read">read</button>
+                <button class="y-1 px-2 bg-red-500 rounded-sm" id="delete">delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script defer type="module" src="./scripts/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .button {
+        @apply py-2 px-4 shadow-md rounded-sm bg-blue-500 
+        text-white flex items-center active:scale-95;
+    }
+
+    input {
+        @apply p-1 border-[1px] border-zinc-800 block w-full outline-none
+        rounded-sm bg-transparent focus:border-blue-500;
+    }
+
+    .modal-container {
+        @apply items-center justify-center h-screen w-full fixed 
+        top-0 left-0 shadow-md;
+    }
+
+
+    .book-container {
+        @apply mx-auto w-10/12 py-3 flex justify-center gap-3 flex-wrap;
+    }
+
+    .book-card {
+        @apply p-2 rounded-sm w-72 h-max border-[1px] border-zinc-700 hover:cursor-pointer;
+    }
+}
