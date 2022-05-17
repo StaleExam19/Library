@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "snowpack dev"
+    "dev": "snowpack dev",
+    "build": "snowpack build"
   },
   "devDependencies": {
     "@snowpack/plugin-postcss": "^1.4.3",

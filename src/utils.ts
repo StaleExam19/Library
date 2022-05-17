@@ -14,30 +14,30 @@ const bookCard = (book: Book) => /*html */ `
         <h3 class="text-2xl pointer-events-none">${book.title}</h3>
         <p class="pointer-events-none">${book.author}</p>
         <p class="pointer-events-none">${book.pages} pages</p>
-        <p class="pointer-events-none">Read: ${book.read ? "Yes" : "Not Yet"}</p>
+        <p class="pointer-events-none">Read: 
+        <span class="${book.read ? 'text-green-500' : 'text-rose-500'}">
+        ${book.read ? "Yes" : "Not Yet"}
+        </span></p>
     </div>
 `;
 
 const updateBookContainer = () => {
     bookContainer!.innerHTML = "";
-
-    if ((<Book[]>JSON.parse(localStorage.getItem("books")!)).length !== 0) {
+    const book = (<Book[]>JSON.parse(localStorage.getItem("books")!))
+    if (book.length !== 0) {
         ind?.classList.add("hidden");
-
-        (<Book[]>JSON.parse(localStorage.getItem("books")!)).map(val => {
+        book.map(val => {
             bookContainer!.innerHTML += bookCard(val);
         });
     }
-    else
-        ind?.classList.remove("hidden");
 }
 
 
 const generateId = () => {
     let chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     let result = "";
-    for (let i = 0; i < 16; i++) 
-        result += chars[Math.floor(Math.random()  * chars.length - 1)];
+    for (let i = 0; i < 16; i++)
+        result += chars[Math.floor(Math.random() * chars.length - 1)];
 
     return result;
 }
